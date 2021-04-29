@@ -450,14 +450,21 @@ public class BlePeripheral {
     private  void saveSharedPreferences(Context context, String address){
         SharedPreferences sp = context.getSharedPreferences("wellness_param", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sp.edit();
-        //editor.getStringSet("address",new HashSet<String>());
-        //if()
-        //editor.commit();
+        Set<String> parameter = getSharedPreferences(context, address);
+        if(parameter == null) {
+            parameter.add(address);
+            editor.putStringSet("address", parameter);
+            editor.commit();
+        }
     }
 
-    private  void getSharedPreferences(Context context, String address){
+    private  Set<String> getSharedPreferences(Context context, String address){
         SharedPreferences sp = context.getSharedPreferences("wellness_param", Context.MODE_PRIVATE);
-        //sp.getStringSet();
+        Set<String> list = sp.getStringSet("address",null);
+        if(!list.contains(address)) {
+            return list;
+        }
+        return null;
     }
 
 

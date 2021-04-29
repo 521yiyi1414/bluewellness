@@ -96,4 +96,7 @@ dependencies {
 
     //
     testImplementation 'junit:junit:4.12'
+
+    debugImplementation "io.objectbox:objectbox-android-objectbrowser:$rootProject.ext.objectboxVersion"
+    releaseImplementation "io.objectbox:objectbox-android:$rootProject.ext.objectboxVersion"
 }

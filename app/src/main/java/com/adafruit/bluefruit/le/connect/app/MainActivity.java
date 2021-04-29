@@ -25,7 +25,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.adafruit.bluefruit.le.connect.BluefruitApplication;
+import com.adafruit.bluefruit.le.connect.AcupodApplication;
 import com.adafruit.bluefruit.le.connect.R;
 import com.adafruit.bluefruit.le.connect.ble.BleUtils;
 import com.adafruit.bluefruit.le.connect.ble.central.BleManager;
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements ScannerFragment.S
     // region Activity Lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v("device","create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements ScannerFragment.S
     protected void onResume() {
         super.onResume();
 
-        BluefruitApplication.activityResumed();
+        AcupodApplication.activityResumed();
         checkPermissions();
 
         // Observe disconnections
@@ -141,7 +140,7 @@ public class MainActivity extends AppCompatActivity implements ScannerFragment.S
     @Override
     protected void onPause() {
         super.onPause();
-        BluefruitApplication.activityPaused();
+        AcupodApplication.activityPaused();
         unregisterGattReceiver();
 
         // Remove location dialog if present

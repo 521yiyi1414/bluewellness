@@ -3,10 +3,10 @@ package com.adafruit.bluefruit.le.connect;
 import android.app.Application;
 
 
-public class BluefruitApplication extends Application {
+public class AcupodApplication extends Application {
     // Log
     @SuppressWarnings("unused")
-    private final static String TAG = BluefruitApplication.class.getSimpleName();
+    private final static String TAG = AcupodApplication.class.getSimpleName();
 
     // Data
     private static boolean mIsActivityVisible;

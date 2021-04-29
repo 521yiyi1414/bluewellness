@@ -31,7 +31,7 @@
 
     <!-- App -->
     <application
-        android:name=".BluefruitApplication"
+        android:name=".AcupodApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_scheme"
         android:icon="@mipmap/ic_launcher"
