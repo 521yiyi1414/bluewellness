@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements ScannerFragment.S
     // region Activity Lifecycle
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v("device","create");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
